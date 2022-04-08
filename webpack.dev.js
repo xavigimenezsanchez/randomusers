@@ -1,7 +1,7 @@
-import { merge } from "webpack-merge";
-import common from "./webpack.common.js";
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 
-export default merge(common, {
+module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
@@ -14,6 +14,6 @@ export default merge(common, {
 
     headers: {
       "Access-Control-Allow-Origin": "*",
-    }
+    },
   },
 });

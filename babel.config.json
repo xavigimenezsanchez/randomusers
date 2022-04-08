@@ -16,6 +16,14 @@
     "@babel/proposal-object-rest-spread",
     "@babel/plugin-transform-runtime",
     [
+      "macros",
+      {
+        "fontawesome-svg-core": {
+          "license": "free"
+        }
+      }
+    ],
+    [
       "@babel/plugin-transform-react-jsx",
       {
         "runtime": "automatic"

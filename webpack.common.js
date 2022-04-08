@@ -1,10 +1,9 @@
-import sass from "sass";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import CopyPlugin from "copy-webpack-plugin";
-import { resolve, join } from "path";
-const __dirname = resolve();
+const sass = require("sass");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const { resolve, join } = require("path");
 
-export default {
+module.exports = {
   entry: "./src/index.tsx",
   watchOptions: {
     ignored: ["**/node_modules"],

@@ -4,7 +4,6 @@ import "./app.scss";
 import { Menu } from "./components";
 const App = () => (
   <div className="app">
-    <h1>Random Users</h1>
     <div className="app_menu">
       <Menu />
     </div>
