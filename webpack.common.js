@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { resolve, join } = require("path");
 
-module.exports = {
+module.exports = (baseUrl) => ({
   entry: "./src/index.tsx",
   watchOptions: {
     ignored: ["**/node_modules"],
@@ -55,6 +55,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: join(__dirname, "./public/index.html"),
+      base: baseUrl,
     }),
   ],
-};
+});
