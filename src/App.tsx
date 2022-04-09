@@ -4,6 +4,7 @@ import "./app.scss";
 import { Menu } from "./components";
 const App = () => {
   const baseRoute = window.location.pathname;
+  debugger;
   return (
     <div className="app">
       <div className="app_menu">
