@@ -9,6 +9,7 @@
     "npm": "8.1.0"
   },
   "scripts": {
+    "build": "webpack-cli build  --config webpack.prod.js",
     "start:dev": "webpack-dev-server --config webpack.dev.js"
   },
   "author": "Xavi Giménez",
