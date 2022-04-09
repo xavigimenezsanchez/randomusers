@@ -1,0 +1,67 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
+$hover-line: 4px;
+$transition-time: 350ms;
+$menu-width: 200px;
+
+.menu {
+  background-color: $primary;
+  width: $menu-width;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  z-index: 100;
+  transform: translateX($menu-width);
+  transition: all 0.25s ease-in-out;
+  animation: bounceHint 1s ease;
+  &.open {
+    transform: translateX(0);
+  }
+  @include for-size(desktop-up) {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+    right: $menu-width;
+    transform: translateX($menu-width);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+
+    @include for-size(desktop-up) {
+      flex-direction: row;
+      transform: translateX(0);
+      min-width: 30em;
+    }
+    &__link {
+      color: $white;
+      text-decoration: none;
+      padding-top: 60px;
+      @include for-size(desktop-up) {
+        padding-top: 0;
+      }
+      &__content {
+        line-height: 1;
+        text-align: center;
+        padding-bottom: calc($hover-line * 2);
+        font-size: 1.5em;
+        background: linear-gradient(0deg, $info, $info) no-repeat right bottom /
+          0 $hover-line;
+        transition-property: background-size, color;
+        transition-duration: $transition-time;
+        transition-timing-function: ease-in-out;
+        &:where(:hover, :focus-visible) {
+          background-size: 100% $hover-line;
+          background-position-x: left;
+          color: $info;
+        }
+      }
+    }
+  }
+}

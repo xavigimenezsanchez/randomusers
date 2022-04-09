@@ -1,5 +1,7 @@
+@import "./sass/variables.scss";
+
 .app {
-  background-color: rgb(173, 173, 172);
   width: 100vw;
   height: 100vh;
+  background-color: $white;
 }
